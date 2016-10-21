@@ -21,20 +21,21 @@
 - Python用u'中文'来表示Unicode编码. e.g. u'中文'
     - 在repl环境中可以直接用`print u'中文'`
     - 在脚本文件中, 除了要在中文前添加`u`, 需要在开头声明文件内容编码格式
-        ```
-        #!/usr/bin/env python
-        # -- coding: utf-8 --
-        ```
+    
+```
+#!/usr/bin/env python
+# -- coding: utf-8 --
+```
+
 - 字符串格式化, 与C语言是一致的, 使用`%`来提供实际数据, 例如
-    ```
-    >>> 'Hello, %s' % 'World'
-    ```
-    多个占位符需要使用括号
-    ```
-    >>> 'Hello, %s, %s' % ('Nixon', 'World, 'World')
-    ```
-    - 常见的占位符:
-        - %d 整数
+
+```
+>>> 'Hello, %s' % 'World' # 单个占位符
+>>> 'Hello, %s, %s' % ('Nixon', 'World, 'World') # 多个占位符需要使用括号
+```
+
+- 常见的占位符:
+    - %d 整数
         - %f 浮点数
         - %s 字符串
         - %x 十六进制整数
