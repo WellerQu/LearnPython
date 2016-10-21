@@ -49,3 +49,9 @@ print u'中文'
 print u'你好, %s, 你是不是有$%d美元?' % ('nixon', 10000)
 
 print u'中文'.encode('gb2312')
+
+classmates = ['nixon', 'wangming', 'fengshuang']
+print classmates, len(classmates), classmates[1]
+
+t = (1, 2)
+print t
