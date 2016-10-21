@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -- coding: UTF-8 --
 # this is a comment
 
 a = int(raw_input('input number:'))
@@ -32,7 +33,7 @@ if None:
 else:
     print 'None is a False'
 
-if None == False:
+if None is False:
     print 'None equals to False'
 
 if 0:
@@ -40,5 +41,11 @@ if 0:
 else:
     print '0 is a False'
 
-if 0 == False:
+if 0 is False:
     print '0 equals to False'
+
+print u'中文'
+
+print u'你好, %s, 你是不是有$%d美元?' % ('nixon', 10000)
+
+print u'中文'.encode('gb2312')
