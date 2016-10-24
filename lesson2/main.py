@@ -58,3 +58,23 @@ print t
 
 for name in classmates:
     print name
+
+sum = 0
+for item in range(0, 101):
+    sum += item
+
+print sum
+
+dt = {'A': 100, 'B': 100}
+print dt, dt['A']
+
+dt['B'] = 102
+print dt
+
+print 'C' in dt, 'A' in dt
+
+s = set([1, 2, 3, 3])
+print s
+
+s = set((1, 2, 3, 3))
+print s

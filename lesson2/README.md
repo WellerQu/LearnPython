@@ -52,6 +52,7 @@
         - insert(i, n)  指定位置插入
         - pop(i)        删除末尾或指定位置的元素
         - len(list)     获得长度
+        - sort()        排序
 
 ```
 >>> ls = ['abc', '123', 444]
@@ -83,10 +84,40 @@ for key in []:
 while condition:
     # TODO: add code
 
-# 值得注意的是, 循环和if语句一样, 有一个'**:**'存在.
+# 值得注意的是, 循环和if语句一样, 有一个':'存在.
 ```
 
 - range函数, 提供生成[0, n)区间的整数序列
+- Python内置数据类型dict字典
+    - 初始化dict就像JavaScript中初始化一个JSON对象一样, 而且数据读写方式也是一样
+    - 就连是否包含特定键值的判断也是一样
+
+```
+dt = {'A': 100, 'B': 101: 101}
+print dt['A']
+
+dt['B'] = 102
+print dt
+
+print 'C' in dt, 'A' in dt
+# in 返回一个Boolean类型数据
+```
+
+- Python内置数据类型set集合
+    - 初始化一个set需要以一个list作为输入
+    - set中仅存储key, 没有value
+    - set中的key不会重复, 可以看成数学上无序和无重复的元素集合
+    - 可用的方法
+        - add(key)      添加key
+        - remove(key)   移除key
+
+```
+ls = [1, 2, 3, 3]
+s = set(ls);
+
+print s
+```
+
 
 ## 认知点
 - [x] 如何注释一行代码?
@@ -101,3 +132,5 @@ while condition:
 - [x] 内置类型tuple及其特性
 - [ ] 判断和循环?
 - [ ] range函数?
+- [ ] 内置类型dict及其方法
+- [ ] 内置类型set及其方法
