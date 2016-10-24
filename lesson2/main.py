@@ -55,3 +55,6 @@ print classmates, len(classmates), classmates[1]
 
 t = (1, 2)
 print t
+
+for name in classmates:
+    print name
