@@ -62,5 +62,5 @@ def testAll(a, b=2, *c, **d):
 
 testAll(1)
 testAll(1, 3)
-testAll(1, 3, *(1, 2))
+testAll(1, 3, *[1, 2])
 testAll(1, 3, *(1, 1), city=123)
