@@ -47,33 +47,44 @@ print x + y
         - e.g. def test(a, b=1, *nums, **kw)    # a必选参数, b可选参数, nums可变参数, kw关键词参数
 
 ```
-    # 默认参数
-    def test(a, b=2):
-        print a, b
+# 默认参数
+def test(a, b=2):
+    print a, b
 
-    # wrong: default parameters was computed when define
-    def test(a=[]):
-        a.append('End')
-        print a
+# wrong: default parameters was computed when define
+def test(a=[]):
+    a.append('End')
+    print a
 
-    # right
-    def test(a=None):
-        if a is None:
-            a = ['End']
-        print a
+# right
+def test(a=None):
+    if a is None:
+        a = ['End']
+    print a
 
-    # 可变参数
-    def test(*num):
-        print nums[0], nums[1]
+# 可变参数
+def test(*num):
+    print nums[0], nums[1]
 
-    test(*[3, 2, 1])
+test(*[3, 2, 1])
 
-    # 关键词参数
-    def test(**kw):
-        for key in kw:
-            print key, kw[key]
+# 关键词参数
+def test(**kw):
+    for key in kw:
+        print key, kw[key]
 
-    test(a=1, b=2)
+test(a=1, b=2)
 ```
 
 ## 认知点
+
+- [ ] 调用函数的方式及各类型参数的传递方式
+- [ ] 在repl环境中如何查看内置函数的帮助信息
+- [ ] 将函数赋值给一个变量?
+- [ ] 定义函数及其参数
+- [ ] 函数的返回值及如何接收返回值
+- [ ] 必选参数
+- [ ] 默认参数
+- [ ] 可变参数
+- [ ] 关键词参数
+- [ ] 参数组合
