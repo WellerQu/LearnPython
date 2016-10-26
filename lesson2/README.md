@@ -130,7 +130,21 @@ print s
 - [x] 场宽是啥?
 - [x] 内置类型list及其方法
 - [x] 内置类型tuple及其特性
-- [ ] 判断和循环?
-- [ ] range函数?
-- [ ] 内置类型dict及其方法
-- [ ] 内置类型set及其方法
+- [x] 判断和循环?
+- [x] range函数?
+- [x] 内置类型dict及其方法
+- [x] 内置类型set及其方法
+
+## Otherwise
+
+dict是允许一个变量作为key的
+
+```
+a = 1
+dt = {a: 1}
+print 'a' in dt # False
+print a in dt   # True
+
+dt = {'a': 1}
+print 'a' in dt # True
+```

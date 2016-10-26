@@ -42,3 +42,30 @@ t = (1, )
 # t[0] = 2
 
 print t
+
+if True:
+    print 'True'
+
+if raw_input('输入a: ') == 'a':
+    print 'Good boy'
+elif raw_input('输入b: ') == 'b':
+    print 'Well'
+else:
+    print 'Bad boy'
+
+i = 0
+while i < 6:
+    print i
+    i = i + 1
+
+for key in range(0, 5):
+    print key
+
+dt = {'HELL': 'Hello Dict'}
+if 'HELL' in dt:
+    print dt['HELL']
+
+s = set(ls)
+s.add('good girl')
+s.add('hello')
+print s
