@@ -33,15 +33,48 @@ print x + y
 ```
 
 - 函数的参数
-    - 默认参数 e.g. def test(x, y=2) ES2015的默认参数应该就是copy的这里.
+    - 必选参数
+    - 默认参数
+        - e.g. def test(x, y=2) ES2015的默认参数应该就是copy的这里.
     - 默认参数应该指向不可变对象, 原因是默认参数在函数定义时就已经计算出来了.
-    - 可变参数 e.g. def test(*nums) nums是一个tuple
-    - '*'还可以将一个list类型的数据展开, 以匹配可变参数
+    - 可变参数, 可以传入0个或多个参数, 这些参数将组成一个tuple
+        - e.g. def test(*nums)  # nums是一个tuple
+    - '*'还可以将一个list类型或tuple类型的数据展开, 以匹配可变参数
+    - 关键词参数, 允许传入0个或多个指定参数名的参数, 这些参数将组成一个dict
+        - e.g. def test(**kw)   # kw是一个dict
+    - 参数组合
+        - 同一个函数的参数列表中, 可变参数和关键词参数均仅可出现一次
+        - e.g. def test(a, b=1, *nums, **kw)    # a必选参数, b可选参数, nums可变参数, kw关键词参数
 
 ```
-```
+    # 默认参数
+    def test(a, b=2):
+        print a, b
 
-    - 关键词参数
+    # wrong: default parameters was computed when define
+    def test(a=[]):
+        a.append('End')
+        print a
+
+    # right
+    def test(a=None):
+        if a is None:
+            a = ['End']
+        print a
+
+    # 可变参数
+    def test(*num):
+        print nums[0], nums[1]
+
+    test(*[3, 2, 1])
+
+    # 关键词参数
+    def test(**kw):
+        for key in kw:
+            print key, kw[key]
+
+    test(a=1, b=2)
+```
 
 - 递归函数
 
