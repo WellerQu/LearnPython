@@ -25,14 +25,13 @@
         - e.g. for k, v in dict.iteritems()     # 同时遍历dict的key和value
         - e.g. for ch in 'ABC'                  # 遍历字符串中的每一个字符
     - 判断一个对象是否是可迭代对象, 方法是通过collections模块的Iterable类型判断
+    - 类似Java那样的下表循环需要用到内置函数enumerate, 可以把一个list变成索引-元素对
 
 ```
 from collections import Iterable
 if isinstance(obj, Iterable):
     print u'是一个可迭代对象'
 ```
-
-    - 类似Java那样的下表循环需要用到内置函数enumerate, 可以把一个list变成索引-元素对
 
 ```
 for index, value in enumerate(['A', 'B', 'C']):
