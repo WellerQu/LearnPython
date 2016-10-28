@@ -19,6 +19,30 @@
     - 字符串也是列表, 也可以切片
 
 - 迭代
+    - 通过`for...in...`来完成, 作用于可迭代对象, 包括但不限于list, tuple, dict
+        - e.g. for key in dict                  # 遍历dict的key
+        - e.g. for value in dict.itervalues()   # 遍历dict的value
+        - e.g. for k, v in dict.iteritems()     # 同时遍历dict的key和value
+        - e.g. for ch in 'ABC'                  # 遍历字符串中的每一个字符
+    - 判断一个对象是否是可迭代对象, 方法是通过collections模块的Iterable类型判断
+
+```
+from collections import Iterable
+if isinstance(obj, Iterable):
+    print u'是一个可迭代对象'
+```
+
+    - 类似Java那样的下表循环需要用到内置函数enumerate, 可以把一个list变成索引-元素对
+
+```
+for index, value in enumerate(['A', 'B', 'C']):
+    print index, value
+
+# 另外一种常见的写法
+for x, y in [(1, 1), (2, 4), (3, 9)]:
+    print x, y
+```
+
 - 列表生成式
 - 生成器
 
