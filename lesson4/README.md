@@ -42,7 +42,14 @@ for x, y in [(1, 1), (2, 4), (3, 9)]:
     print x, y
 ```
 
-- 列表生成式
+- 列表生成式(ps: 推导数组?)
+    - 用来生成一个新的list
+    - 可以制定生成规则
+        e.g. [ x for x in range(1, 11) ]
+        e.g. [ x for x in range(1, 11) if x % 2 == 0 ]
+        e.g. [ x if x % 2 == 0 else x for x in range(1, 11) ]
+    - 总的来说,就是从一个已知列表推算出另一个列表
+
 - 生成器
 
 ## 认知点
