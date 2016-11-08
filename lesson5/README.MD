@@ -24,5 +24,35 @@ print L
     - reduce(fn, [1, 2, 3]) 相当于 fn(fn(1, 2), 3)
     - fn中每次必须返回结果作为下一次计算的第一个参数
 
+```
+def cSum(last, current):
+    return last + current
+
+L = reduce(cSum, [1, 2, 3])
+print L
+```
+
+- filter函数
+    - 将判断结果为false的元素过滤掉
+    - 判断结果为返回值
+
+```
+# 求1到100以内的素数
+
+def primeNum(n):
+    if n == 2 or n == 3:
+        return True
+    elif n > 3 and n % 2 != 0 and n % 3 != 0:
+        return True
+    else:
+        return False
+
+L = filter(primeNum, range(1, 101))
+print L
+```
+
 ## 认知点
 
+- [ ] map
+- [ ] reduce
+- [ ] filter
