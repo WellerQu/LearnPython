@@ -31,3 +31,24 @@ def primeNum(n):
 
 L = filter(primeNum, range(1, 101))
 print L
+
+
+def fn():
+    def f():
+        return 2
+    return f
+
+ex = fn()
+print ex()
+
+ex1 = fn()
+ex2 = fn()
+print ex1 == ex2
+
+
+def retFn():
+    return fn
+
+ex3 = retFn()
+ex4 = retFn()
+print ex3 == ex4

@@ -51,8 +51,32 @@ L = filter(primeNum, range(1, 101))
 print L
 ```
 
+- 返回函数
+    - 函数内部可以再声明函数, 并将函数作为返回值返回
+    - 闭包和javascript一样
+
+```
+def fn():
+    def f():
+        return 2
+    return f
+
+ex = fn()
+print ex()
+
+ex1 = fn()
+ex2 = fn()
+
+print ex1 == ex2
+# False
+```
+
+- 匿名函数
+
+
 ## 认知点
 
 - [ ] map
 - [ ] reduce
 - [ ] filter
+- [ ] 函数作为返回值
