@@ -72,7 +72,38 @@ print ex1 == ex2
 ```
 
 - 匿名函数
+    - lambda关键词开始一个匿名函数
 
+```
+def fn():
+    return lambda x: x + x
+
+print fn()(1)
+```
+
+- 装饰器
+    - 函数也是对象, 通过fn.__name__可以拿到函数的名字
+    - 在代码运行期间动态增加功能的方式,称之为"装饰器"
+    - 本质上,装饰器就是一个返回函数的高阶函数
+    - 通过`@`语法来代理目标函数
+
+```
+def decoratorFunc(fn):
+    def wrapper():
+        // TODO: before fn was executed, add ours logic code
+        return fn();
+    return wrapper;
+
+@decoratorFunc
+def test():
+    print "Hello"
+
+# 相当于test = decoratorFunc(test)
+```
+
+- 偏函数
+    - 偏函数是将所要承载的函数作为partial()函数的第一个参数，原函数的各个参数依次作为partial()函数后续的参数，除非使用关键字参数。
+    - 用于秃顶函数的某些参数
 
 ## 认知点
 
@@ -80,3 +111,7 @@ print ex1 == ex2
 - [ ] reduce
 - [ ] filter
 - [ ] 函数作为返回值
+- [ ] 匿名函数
+- [ ] 装饰器
+- [ ] 函数名获取,functools的作用
+- [ ] 偏函数

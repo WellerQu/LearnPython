@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import functools
 
 print "Hello World"
 
@@ -52,3 +53,55 @@ def retFn():
 ex3 = retFn()
 ex4 = retFn()
 print ex3 == ex4
+
+
+def fn():
+    return lambda x: x + x
+
+print fn()(1)
+
+ex5 = fn()
+ex6 = fn()
+
+print ex5 == ex6
+print fn().__name__
+
+
+def log(fn):
+    def wrapper():
+        print 'call %s()' % fn.__name__
+        return fn()
+    return wrapper
+
+
+@log
+def testFn():
+    print 'Hello'
+
+testFn()
+
+
+# 一个更复杂的装饰器实例
+def customLog(text):
+    def dec(fn):
+        functools.wraps(fn)
+        def wrapper():
+            print text
+            return fn()
+        return wrapper
+    return dec
+
+
+@customLog('Hello')
+def testFn2():
+    print 'yes'
+
+testFn2()
+
+
+def forPartial(a, b=1, *c, **d):
+    return a, b, c, d
+
+
+fn = functools.partial(forPartial, 2, 3, *(1,2,3), sw=1)
+print fn()
