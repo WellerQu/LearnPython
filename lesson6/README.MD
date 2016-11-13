@@ -6,6 +6,7 @@
     - 即文件名, e.g. a.py 即 a
 - 包(package)
     - 即目录名, e.g. web/ 即 web
+    - 需要在目录下创建文件__init__.py, 文件可以为空
 - sys模块
     - sys.argv 获取调用模块时的参数
     - sys.path 模块搜索路径
@@ -19,6 +20,11 @@ a.sayHello()
 
 - 特殊变量
     - 以__开头和结尾的变量, e.g. __author__ = "nixon"
+    - __doc__: ''' 模块描述 '''
+    - __file__: 模块文件
+    - __name__: 模块名, 包含包名
+    - __package__: ??
+    - __author__: 自定义特殊变量
 - 私有(private)描述符
     - 以__开头, 不过这只是一个约定, 并不会被限制调用
 - 公开(public)描述符
