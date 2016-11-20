@@ -11,7 +11,7 @@
     - sys.argv 获取调用模块时的参数
     - sys.path 模块搜索路径
 
-```
+```python
 # from <package> import <Module>
 from web import a
 

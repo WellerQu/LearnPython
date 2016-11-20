@@ -12,7 +12,7 @@
 
 ps. 不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量
 
-```
+```python
 class Student():
     # 构造函数
     def __init__(self, age, name):
@@ -43,7 +43,7 @@ print stu._Student__name
     - `import types` 导入类型定义常量
     - 判断一个变量是否属于某个类型, 优先使用isinstance()函数
 
-```
+```python
 import types
 print type('123') == types.StringType
 ```

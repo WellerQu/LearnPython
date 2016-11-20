@@ -7,7 +7,7 @@
     - 第二个参数及以后均为列表
     - 第二个参数及以后将分别逐个传入第一个参数(函数), 这意味着map的参数个数必须比第一个参数(函数)的参数个数多1
 
-```
+```python
 L = map(str, [1, 2, 3])
 print L
 
@@ -24,7 +24,7 @@ print L
     - reduce(fn, [1, 2, 3]) 相当于 fn(fn(1, 2), 3)
     - fn中每次必须返回结果作为下一次计算的第一个参数
 
-```
+```python
 def cSum(last, current):
     return last + current
 
@@ -36,7 +36,7 @@ print L
     - 将判断结果为false的元素过滤掉
     - 判断结果为返回值
 
-```
+```python
 # 求1到100以内的素数
 
 def primeNum(n):
@@ -55,7 +55,7 @@ print L
     - 函数内部可以再声明函数, 并将函数作为返回值返回
     - 闭包和javascript一样
 
-```
+```python
 def fn():
     def f():
         return 2
@@ -74,7 +74,7 @@ print ex1 == ex2
 - 匿名函数
     - lambda关键词开始一个匿名函数
 
-```
+```python
 def fn():
     return lambda x: x + x
 
@@ -87,7 +87,7 @@ print fn()(1)
     - 本质上,装饰器就是一个返回函数的高阶函数
     - 通过`@`语法来代理目标函数
 
-```
+```python
 def decoratorFunc(fn):
     def wrapper():
         // TODO: before fn was executed, add ours logic code
@@ -105,7 +105,7 @@ def test():
     - 偏函数是将所要承载的函数作为partial()函数的第一个参数，原函数的各个参数依次作为partial()函数后续的参数，除非使用关键字参数。
     - 用于固定函数的某些参数
 
-```
+```python
 int = functools.partial(int, base=2)
 ```
 
