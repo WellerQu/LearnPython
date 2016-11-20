@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import types
+
 from mo import student
 from ol import teacher
 
@@ -23,3 +25,6 @@ class GoodStudent(student.Student):
 
 gs = GoodStudent("ming")
 print 'GoodStudent\'s name is %s' % gs.getName()
+
+# print type('123') == types.StringType
+print isinstance('123', types.StringType)

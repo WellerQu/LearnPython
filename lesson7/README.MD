@@ -38,5 +38,15 @@ print stu._Student__name
 - 多态
     - 与其他面向对象语言中的多态相同
 
+- 获取对象信息
+    - type()函数, 可以用来获取基本类型,函数,类的类型
+    - `import types` 导入类型定义常量
+    - 判断一个变量是否属于某个类型, 优先使用isinstance()函数
+
+```
+import types
+print type('123') == types.StringType
+```
+
 ## 认知点
 
