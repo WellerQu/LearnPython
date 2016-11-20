@@ -5,7 +5,7 @@
 - 可以在repl环境中查看函数帮助 e.g. help(abs)
 - 函数地址赋值
 
-```
+```python
 a = abs
 print a(-1)
 ```
@@ -14,7 +14,7 @@ print a(-1)
     - pass用来做函数体表示函数什么也不做
     - 函数默认返回None
 
-```
+```python
 def myFunc():
     pass
 ```
@@ -23,7 +23,7 @@ def myFunc():
 - 抛出错误 e.g. raise TypeError('Hello')
 - 允许返回多个值
 
-```
+```python
 def test():
     return 1, 1
 
@@ -46,7 +46,7 @@ print x + y
         - 同一个函数的参数列表中, 可变参数和关键词参数均仅可出现一次
         - e.g. def test(a, b=1, *nums, **kw)    # a必选参数, b可选参数, nums可变参数, kw关键词参数
 
-```
+```python
 # 默认参数
 def test(a, b=2):
     print a, b

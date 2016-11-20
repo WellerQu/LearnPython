@@ -22,14 +22,14 @@
     - 在repl环境中可以直接用`print u'中文'`
     - 在脚本文件中, 除了要在中文前添加`u`, 需要在开头声明文件内容编码格式
     
-```
+```python
 #!/usr/bin/env python
 # -- coding: utf-8 --
 ```
 
 - 字符串格式化, 与C语言是一致的, 使用`%`来提供实际数据, 例如
 
-```
+```python
 >>> 'Hello, %s' % 'World' # 单个占位符
 >>> 'Hello, %s, %s' % ('Nixon', 'World, 'World') # 多个占位符需要使用括号
 ```
@@ -66,7 +66,7 @@
     - 更重要的是, **tuple元组不可变**, 其他和list访问起来一致
     - tuple很简单, 但使用时仍然有一些小技巧
 
-```
+```python
 # 初始化一个空的tuple
 t = ()
 
@@ -77,7 +77,7 @@ t = (1,)
 
 - 循环
 
-```
+```python
 for key in []:
     # TODO: add code
 
@@ -92,7 +92,7 @@ while condition:
     - 初始化dict就像JavaScript中初始化一个JSON对象一样, 而且数据读写方式也是一样
     - 就连是否包含特定键值的判断也是一样
 
-```
+```python
 dt = {'A': 100, 'B': 101: 101}
 print dt['A']
 
@@ -111,7 +111,7 @@ print 'C' in dt, 'A' in dt
         - add(key)      添加key
         - remove(key)   移除key
 
-```
+```python
 ls = [1, 2, 3, 3]
 s = set(ls);
 
@@ -139,7 +139,7 @@ print s
 
 dict是允许一个变量作为key的
 
-```
+```python
 a = 1
 dt = {a: 1}
 print 'a' in dt # False
