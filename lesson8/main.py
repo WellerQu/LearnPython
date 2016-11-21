@@ -39,3 +39,13 @@ Student.set_age = MethodType(set_age, None, Student)
 
 s2.set_age(15)
 print s2.get_age()
+
+
+class Teacher(object):
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        self._name = name
