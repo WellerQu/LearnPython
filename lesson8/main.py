@@ -49,3 +49,25 @@ class Teacher(object):
     @name.setter
     def name(self, name):
         self._name = name
+
+
+class Animal(object):
+    def ohh(self):
+        print 'I\'m the king'
+
+
+class Runnable(object):
+    def ohh(self):
+        print 'I\'m running'
+
+    def run(self):
+        print 'Running'
+
+
+class Tigger(Runnable, Animal):
+    pass
+
+
+tigger = Tigger()
+tigger.ohh()
+tigger.run()

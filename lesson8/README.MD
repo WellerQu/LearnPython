@@ -67,6 +67,23 @@ class Teacher(object):
         return self._age;
 ```
 
+- 多重继承
+    - 可使用各个继承类的所有方法
+    - 如果父类集合中出现同名方法, 按继承顺序优先级依次降低
+
+```python
+class Animal(object):
+    pass
+
+class Runnable(object):
+    pass
+
+class Tigger(Animal, Runnable):
+    pass
+```
+
+- 定制类
+
 ## 认知点
 
 - [ ] 可以动态的给对象实例赋予新的属性, 不同实例间没有影响
