@@ -71,3 +71,42 @@ class Tigger(Runnable, Animal):
 tigger = Tigger()
 tigger.ohh()
 tigger.run()
+
+
+class Custom(object):
+    __slots__ = ('a', 'b')
+
+    def __init__(self):
+        pass
+
+    def __len__(self):
+        return 1
+
+    def __str__(self):
+        return "Hello, I'm a Custom instance"
+
+    def __repr__(self):
+        return "Hello, Repr"
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        raise StopIteration()
+
+    def __getitem__(self, index):
+        a, b = 1, 1
+        for x in range(index):
+            a, b = b, a + b
+
+        return a
+
+    def __getattr__(self, attrName):
+        return attrName
+
+c = Custom()
+print len(c)
+print c
+print c[0], c[1], c[2], c[3], c[4], c[5]
+# 访问并不存在的属性
+print c.name
