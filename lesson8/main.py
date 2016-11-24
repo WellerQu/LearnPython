@@ -41,6 +41,38 @@ s2.set_age(15)
 print s2.get_age()
 
 
+class Teacher(object):
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        self._name = name
+
+
+class Animal(object):
+    def ohh(self):
+        print 'I\'m the king'
+
+
+class Runnable(object):
+    def ohh(self):
+        print 'I\'m running'
+
+    def run(self):
+        print 'Running'
+
+
+class Tigger(Runnable, Animal):
+    pass
+
+
+tigger = Tigger()
+tigger.ohh()
+tigger.run()
+
+
 Master = type('Master', (object,), dict(cmd=lambda self, x: 'Hello %s' % x))
 
 m = Master()
