@@ -39,3 +39,22 @@ Student.set_age = MethodType(set_age, None, Student)
 
 s2.set_age(15)
 print s2.get_age()
+
+
+Master = type('Master', (object,), dict(cmd=lambda self, x: 'Hello %s' % x))
+
+m = Master()
+print m.cmd("world")
+
+
+class MyClassMeta(type):
+    def __new__(cls, className, bases, attrs):
+        attrs['say'] = lambda self, x: 'Hello %s' % x
+        return type.__new__(cls, className, bases, attrs)
+
+
+class MyClass(object):
+    __metaclass__ = MyClassMeta
+
+m = MyClass()
+print m.say('World')
