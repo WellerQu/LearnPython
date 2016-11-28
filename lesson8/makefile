@@ -25,3 +25,6 @@ init:
 	@echo '' >> $(README)
 	@echo '## 认知点' >> $(README)
 	@echo '' >> $(README)
+
+clean:
+	rm *.pyc
