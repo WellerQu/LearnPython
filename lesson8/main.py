@@ -73,40 +73,20 @@ tigger.ohh()
 tigger.run()
 
 
-class Custom(object):
-    __slots__ = ('a', 'b')
+Master = type('Master', (object,), dict(cmd=lambda self, x: 'Hello %s' % x))
 
-    def __init__(self):
-        pass
+m = Master()
+print m.cmd("world")
 
-    def __len__(self):
-        return 1
 
-    def __str__(self):
-        return "Hello, I'm a Custom instance"
+class MyClassMeta(type):
+    def __new__(cls, className, bases, attrs):
+        attrs['say'] = lambda self, x: 'Hello %s' % x
+        return type.__new__(cls, className, bases, attrs)
 
-    def __repr__(self):
-        return "Hello, Repr"
 
-    def __iter__(self):
-        return self
+class MyClass(object):
+    __metaclass__ = MyClassMeta
 
-    def __next__(self):
-        raise StopIteration()
-
-    def __getitem__(self, index):
-        a, b = 1, 1
-        for x in range(index):
-            a, b = b, a + b
-
-        return a
-
-    def __getattr__(self, attrName):
-        return attrName
-
-c = Custom()
-print len(c)
-print c
-print c[0], c[1], c[2], c[3], c[4], c[5]
-# 访问并不存在的属性
-print c.name
+m = MyClass()
+print m.say('World')
