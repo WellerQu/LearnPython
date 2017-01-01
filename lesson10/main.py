@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# import os
+import os
 import time
-from multiprocessing import Process, Queue
+# from multiprocessing import Process, Queue
+from multiprocessing import Pool
 
 print 'Lesson %d' % 10
 
@@ -30,6 +31,8 @@ else:
 and my child process is %s' % (os.getpid(), pid)
 '''
 
+# --- 通过队列来同步多个进程 ---
+'''
 if __name__ == '__main__':
     q = Queue()
 
@@ -52,3 +55,18 @@ if __name__ == '__main__':
 
     pw.join()
     pr.terminate()
+'''
+
+# --- Pool ---
+if __name__ == '__main__':
+    def long_time_task(name):
+        print '%s Hello %s' % (os.getpid(), name)
+        time.sleep(5)
+
+    p = Pool(4)
+    for i in range(5):
+        p.apply_async(long_time_task, args=(i,))
+
+    p.close()
+    p.join()  # 等进程池中的进程完事儿
+    print 'all done'
